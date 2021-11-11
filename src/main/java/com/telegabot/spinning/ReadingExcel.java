@@ -1,12 +1,10 @@
 package com.telegabot.spinning;
 
-import com.telegabot.spinning.messagesender.MessageSender;
 import com.telegabot.spinning.objects.Person;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -44,7 +42,8 @@ public class ReadingExcel {
             workbook.close();
             inputStream.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println("бля.. файла нет... :(");
 
         }
         return result;
@@ -77,7 +76,8 @@ public class ReadingExcel {
             workbook.close();
             inputStream.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println("бля.. файла нет... :(");
         }
 
         return result;
@@ -110,7 +110,8 @@ public class ReadingExcel {
             workbook.close();
             inputStream.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println("бля.. файла нет... :(");
         }
 
         return result;
@@ -142,7 +143,8 @@ public class ReadingExcel {
             workbook.close();
             inputStream.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println("бля.. файла нет... :(");
         }
 
         return result;
