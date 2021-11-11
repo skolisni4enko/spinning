@@ -43,7 +43,7 @@ public class ReadingExcel {
             inputStream.close();
         } catch (IOException e) {
             //e.printStackTrace();
-            System.out.println("бля.. файла нет... :(");
+            System.out.println("бля.. файла С ЗОНАМИ нет... :(");
 
         }
         return result;
@@ -77,7 +77,7 @@ public class ReadingExcel {
             inputStream.close();
         } catch (IOException e) {
             //e.printStackTrace();
-            System.out.println("бля.. файла нет... :(");
+            System.out.println("бля.. файла ЖЕРЕБЬЕВКИ нет... :(");
         }
 
         return result;
@@ -111,7 +111,7 @@ public class ReadingExcel {
             inputStream.close();
         } catch (IOException e) {
             //e.printStackTrace();
-            System.out.println("бля.. файла нет... :(");
+            System.out.println("бля.. файла ЛИЧКИ нет... :(");
         }
 
         return result;
@@ -144,7 +144,7 @@ public class ReadingExcel {
             inputStream.close();
         } catch (IOException e) {
             //e.printStackTrace();
-            System.out.println("бля.. файла нет... :(");
+            System.out.println("бля.. файла КОМАНД нет... :(");
         }
 
         return result;
