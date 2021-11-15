@@ -43,6 +43,8 @@ public class MessageHandler implements Handler<Message> {
 
             if (!text.equals("ТУР1") && !text.equals("ТУР2") && !text.equals("ТУР3")) {
                 List<Person> list;
+                List<Person> list2;
+                StringBuilder str2;
                 StringBuilder str;
                 switch (text) {
                     case "/start":
@@ -69,11 +71,33 @@ public class MessageHandler implements Handler<Message> {
                         if (list.isEmpty()) {
                             sendMessage.setText("Такого файла нет. Или результаты еще обрабатываются.");
                         } else {
-                            str = new StringBuilder("<b><u>Личный ТУР1:</u></b>\n\n");
-                            for (Person person:list) {
-                                str.append(person.toStringPersonalCredit()).append("\n");
+                            System.out.println(list.size());
+                            //Чтобы не превышать символы в сообщении
+                            if (list.size() > 50) {
+                                list2 = list.subList(50, list.size());
+                                list = list.subList(0, 50);
+
+                                str = new StringBuilder("<b><u>Личный ТУР1:</u></b>\n\n");
+                                for (Person person:list) {
+                                    str.append(person.toStringPersonalCredit()).append("\n");
+                                }
+                                str2 = new StringBuilder();
+                                for (Person person:list2) {
+                                    str2.append(person.toStringPersonalCredit()).append("\n");
+                                }
+
+                                sendMessage.setText(str.toString());
+                                messageSender.sendMessage(sendMessage);
+                                sendMessage.setText(str2.toString());
+                            } else {
+                                str = new StringBuilder("<b><u>Личный ТУР1:</u></b>\n\n");
+                                for (Person person:list) {
+                                    str.append(person.toStringPersonalCredit()).append("\n");
+                                }
+                                sendMessage.setText(str.toString());
+
                             }
-                            sendMessage.setText(str.toString());
+                           //TODO
                         }
 
                         break;
@@ -82,11 +106,29 @@ public class MessageHandler implements Handler<Message> {
                         if (list.isEmpty()) {
                             sendMessage.setText("Такого файла нет. Или результаты еще обрабатываются.");
                         } else {
-                            str = new StringBuilder("<b><u>Личный ТУР1+2:</u></b>\n\n");
-                            for (Person person:list) {
-                                str.append(person.toStringPersonalCredit()).append("\n");
+                            if (list.size() > 50) {
+                                list2 = list.subList(50, list.size());
+                                list = list.subList(0, 50);
+
+                                str = new StringBuilder("<b><u>Личный ТУР1+2:</u></b>\n\n");
+                                for (Person person : list) {
+                                    str.append(person.toStringPersonalCredit()).append("\n");
+                                }
+                                str2 = new StringBuilder();
+                                for (Person person : list2) {
+                                    str2.append(person.toStringPersonalCredit()).append("\n");
+                                }
+
+                                sendMessage.setText(str.toString());
+                                messageSender.sendMessage(sendMessage);
+                                sendMessage.setText(str2.toString());
+                            } else {
+                                str = new StringBuilder("<b><u>Личный ТУР1+2:</u></b>\n\n");
+                                 for (Person person : list) {
+                                    str.append(person.toStringPersonalCredit()).append("\n");
+                                 }
+                                sendMessage.setText(str.toString());
                             }
-                            sendMessage.setText(str.toString());
                         }
                         break;
                     case Solution.BUTTON_PERSONAL_FINISH:
@@ -94,11 +136,29 @@ public class MessageHandler implements Handler<Message> {
                         if (list.isEmpty()) {
                             sendMessage.setText("Такого файла нет. Или результаты еще обрабатываются.");
                         } else {
-                            str = new StringBuilder("<b><u>Личка ИТОГ:</u></b>\n\n");
-                            for (Person person:list) {
-                                str.append(person.toStringPersonalCredit()).append("\n");
+                            if (list.size() > 50) {
+                                list2 = list.subList(50, list.size());
+                                list = list.subList(0, 50);
+
+                                str = new StringBuilder("<b><u>Личка ИТОГ:</u></b>\n\n");
+                                for (Person person : list) {
+                                    str.append(person.toStringPersonalCredit()).append("\n");
+                                }
+                                str2 = new StringBuilder();
+                                for (Person person : list2) {
+                                    str2.append(person.toStringPersonalCredit()).append("\n");
+                                }
+
+                                sendMessage.setText(str.toString());
+                                messageSender.sendMessage(sendMessage);
+                                sendMessage.setText(str2.toString());
+                            } else {
+                                str = new StringBuilder("<b><u>Личка ИТОГ:</u></b>\n\n");
+                                for (Person person : list) {
+                                    str.append(person.toStringPersonalCredit()).append("\n");
+                                }
+                                sendMessage.setText(str.toString());
                             }
-                            sendMessage.setText(str.toString());
                         }
                         break;
 
@@ -192,15 +252,6 @@ public class MessageHandler implements Handler<Message> {
         row1.add("ТУР2");
         row1.add("ТУР3");
 
-//        row2.add(KeyboardButton.builder().
-//                text("Phone num send").
-//                requestContact(true).
-//                build());
-//
-//        row3.add(KeyboardButton.builder()
-//                .requestLocation(true)
-//                .text("Location")
-//                .build());
         row2.add("Личка ТУР1");
         row2.add("Личка ТУР1+2");
         row2.add(Solution.BUTTON_PERSONAL_FINISH);

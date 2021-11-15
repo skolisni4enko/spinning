@@ -64,6 +64,7 @@ public class CallBackQueryHandler implements Handler<CallbackQuery> {
 
         sendMessage.setReplyToMessageId(callbackQuery.getMessage().getMessageId());
         sendMessage.setParseMode("HTML");
+        System.out.println(result.length());
         sendMessage.setText(result);
         messageSender.sendMessage(sendMessage);
     }

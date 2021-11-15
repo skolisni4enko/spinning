@@ -8,7 +8,7 @@ public class Solution {
     //Стартовый текст бота
     public static final String START_TEXT = "Привет. Я - бот, что запущен в тестовом режиме. " +
             "Надеюсь, что скоро я буду уметь больше... А пока развлекайся!\n\n\n" +
-            "<a href='https://www.ligaspining.com.ua'>Наш сайт:</a>";
+            "<a href='https://ligaspining.com.ua'>Наш сайт</a>";
 
     //Пути к файлам туров соревнований. Внутри туров лежат зоны (A, B, C)
     public static final String EXCEL_TOUR1 = "..\\spinning\\src\\docsexcel\\По зонам ТУР1.xlsx";
