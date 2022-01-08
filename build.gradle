@@ -4,6 +4,7 @@ plugins {
     id 'java'
 }
 
+mainClassName = "com.telegabot.spinning.SpinningApplication"
 group = 'com.telegabot'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -14,10 +15,12 @@ repositories {
 
 apply plugin: 'java'
 
-jar {
-    manifest {
-        attributes 'SpinningApplication': 'com.telegabot.spinning.SpinningApplication'
-    }
+ext {
+    javaMainClass = "com.telegabot.spinning.SpinningApplication"
+}
+
+application {
+    mainClassName = javaMainClass
 }
 
 dependencies {
