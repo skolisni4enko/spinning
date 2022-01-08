@@ -4,23 +4,12 @@ plugins {
     id 'java'
 }
 
-mainClassName = "com.telegabot.spinning.SpinningApplication"
 group = 'com.telegabot'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
-}
-
-apply plugin: 'java'
-
-ext {
-    javaMainClass = "com.telegabot.spinning.SpinningApplication"
-}
-
-application {
-    mainClassName = javaMainClass
 }
 
 dependencies {
