@@ -12,6 +12,14 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'java'
+
+jar {
+    manifest {
+        attributes 'SpinningApplication': 'com.telegabot.spinning.SpinningApplication'
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
