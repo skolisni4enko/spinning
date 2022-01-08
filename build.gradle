@@ -21,6 +21,12 @@ dependencies {
 
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.telegabot.spinning.SpinningApplication'
+    }
+}
+
 test {
     useJUnitPlatform()
 }
