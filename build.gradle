@@ -2,10 +2,12 @@ plugins {
     id 'org.springframework.boot' version '2.5.2'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 
 group = 'com.telegabot'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 sourceCompatibility = '11'
 
 repositories {
