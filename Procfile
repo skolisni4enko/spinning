@@ -1,1 +1,1 @@
-web: java -cp target/classes/:target/dependency/* com.telegabot.spinning.SpinningApplication
+worker: java -cp target/classes/:target/dependency/* com.telegabot.spinning.SpinningApplication
